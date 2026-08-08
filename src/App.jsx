@@ -150,7 +150,7 @@ function IconButton({ label, children, className = "", ...props }) {
 function Logo() {
   return (
     <Link href="/" className="brand-logo" aria-label="صفحه اصلی Magieto">
-      <img src="/assets/magieto-logo.png" alt="" />
+      <img src={`${import.meta.env.BASE_URL}assets/magieto-logo.png'} alt="" />
     </Link>
   );
 }
