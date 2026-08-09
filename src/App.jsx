@@ -547,8 +547,8 @@ const heroSlides = [
     description: "با روغن جادویی تاکوری، لطافت و درخشندگی را به موها برگردانید و روتین مراقبت مو را کامل کنید.",
     primaryLabel: "محصولات تاکوری",
     primaryHref: "/products?q=تاکوری",
-    leftImage: "{`${import.meta.env.BASE_URL}/assets/hero-section/tacori left.png`}",
-    middleImage: "{`${import.meta.env.BASE_URL}/assets/hero-section/tacori right.png`}",
+    leftImage: "/assets/hero-section/tacori left.png",
+    middleImage: "/assets/hero-section/tacori right.png",
     imageAlt: "روغن موی تاکوری در میان قطره‌های طلایی",
     index: "۰۳",
   },
@@ -650,8 +650,8 @@ function HomePage({ wishlist, onWishlist, onAdd }) {
         </section>
 
         <section className="promo-pair container">
-          <div className="promo-item"><Link href="/products?category=skin" className="promo-image"><img src="/assets/magieto-hero-sunscreen.webp" alt="" /></Link></div>
-          <div className="promo-item"><Link href="/products?category=makeup" className="promo-image"><img src="/assets/magieto-hero-makeup.webp" alt="" /></Link></div>
+          <div className="promo-item"><Link href="/products?category=skin" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-sunscreen.webp`} alt="" /></Link></div>
+          <div className="promo-item"><Link href="/products?category=makeup" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-makeup.webp`} alt="" /></Link></div>
         </section>
 
         <CompactProductCarousel className="care-highlight-section" title="جدیدترین‌ها" list={products.filter((product) => product.collection === "جدیدترین ها")} wishlist={wishlist} onWishlist={onWishlist} onAdd={onAdd} />
