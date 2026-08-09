@@ -8,7 +8,7 @@ export const categories = [
 ];
 
 export const brandLogos = {
-  "آپ اسکای": "{`${import.meta.env.BASE_URL}assets/Brands/آیکون-برند-آپ-اسکای.jpg`}",
+  "آپ اسکای": `${import.meta.env.BASE_URL}assets/Brands/آیکون-برند-آپ-اسکای.jpg`,
   "آرکیا": "/assets/Brands/آیکون-برند-آرکیا.jpg",
   "اورادنت": "/assets/Brands/آیکون-برند-اورادنت.jpg",
   "بیس": "/assets/Brands/آیکون-برند-بیس.jpg",
