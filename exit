@@ -1,0 +1,44 @@
+[33mcommit 9b315dad824db09bf55ef44bfd82fa41aad3b716[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sun Aug 9 00:26:12 2026 +0330
+
+    Update App.jsx
+
+[33mcommit 0bb4ae12fe6884c933513e527603d1bb960c91b9[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sun Aug 9 00:21:50 2026 +0330
+
+    added something to app.jsx
+    
+    added {`${import.meta.env.BASE_URL} to logo url file in app.jsx
+
+[33mcommit 5bfa1d5ebca5d1555a35b317aef9354c29f3b1b4[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sun Aug 9 00:14:04 2026 +0330
+
+    adding dist folder
+
+[33mcommit 0d2119de22ee398d655fa5784f41500c785d1701[m
+Merge: af2ebe7 5e407e6
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sun Aug 9 00:08:08 2026 +0330
+
+    Merge branch 'main' of https://github.com/2laye-dev/Magieto
+
+[33mcommit af2ebe78553d64d0ce5cfddc0ea78130e0d7587c[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sun Aug 9 00:06:43 2026 +0330
+
+    add GitHub Pages deployment
+
+[33mcommit 5e407e6abf9af9c9438c627b4fe24b6e246fde06[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sat Aug 8 23:33:51 2026 +0330
+
+    Set base path for Vite configuration
+
+[33mcommit 83f35ea8180976ddfdf057c0a3b935127bbac9fd[m
+Author: 2laye-dev <2layepodcast@gmail.com>
+Date:   Sat Aug 8 21:40:49 2026 +0330
+
+    Initial commit
