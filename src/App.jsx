@@ -650,8 +650,8 @@ function HomePage({ wishlist, onWishlist, onAdd }) {
         </section>
 
         <section className="promo-pair container">
-          <div className="promo-item"><Link href="/products?category=skin" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-sunscreen.webp`} alt="" /></Link></div>
-          <div className="promo-item"><Link href="/products?category=makeup" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-makeup.webp`} alt="" /></Link></div>
+          <div className="promo-item"><Link href="/products?category=skin" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-sunscreen.png`} alt="" /></Link></div>
+          <div className="promo-item"><Link href="/products?category=makeup" className="promo-image"><img src={`${import.meta.env.BASE_URL}assets/magieto-hero-makeup.png`} alt="" /></Link></div>
         </section>
 
         <CompactProductCarousel className="care-highlight-section" title="جدیدترین‌ها" list={products.filter((product) => product.collection === "جدیدترین ها")} wishlist={wishlist} onWishlist={onWishlist} onAdd={onAdd} />
