@@ -813,7 +813,10 @@ function ProductPage({ id, wishlist, onWishlist, onAdd, cart }) {
           </div>
           <div className="variant-block">
             <fieldset className="variant-group">
-              <legend><strong>رنگ</strong><span>{selectedColor}</span></legend>
+              <legend>
+                <strong>رنگ</strong>
+                <button type="button" className="variant-legend-action" onClick={() => setSelectedColor("")}>پاک کردن</button>
+              </legend>
               <div className="variant-options variant-options--color">
                 {[{ name: "مشکی", color: "#1f1f1f" }, { name: "طلایی", color: "#c9a34e" }].map((option) => (
                   <label key={option.name} className={selectedColor === option.name ? "is-selected" : ""}>
@@ -825,7 +828,7 @@ function ProductPage({ id, wishlist, onWishlist, onAdd, cart }) {
               </div>
             </fieldset>
             <fieldset className="variant-group">
-              <legend><strong>سایز</strong><span>{selectedSize}</span></legend>
+              <legend><strong>حجم</strong></legend>
               <div className="variant-options">
                 <label className={selectedSize === "استاندارد" ? "is-selected" : ""}>
                   <input type="radio" name="product-size" value="استاندارد" checked={selectedSize === "استاندارد"} onChange={() => setSelectedSize("استاندارد")} />
