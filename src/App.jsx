@@ -785,11 +785,13 @@ function EmptySearch({ query }) {
 
 function ProductPage({ id, wishlist, onWishlist, onAdd, cart }) {
   const product = products.find((p) => p.id === id) || products[0];
+  const colorOptions = [{ name: "مشکی", color: "#1f1f1f" }, { name: "طلایی", color: "#c9a34e" }];
   const [activeImage, setActiveImage] = useState(product.image);
   const [quantity, setQuantity] = useState(1);
   const [tab, setTab] = useState("details");
   const [selectedSize, setSelectedSize] = useState("استاندارد");
   const [selectedColor, setSelectedColor] = useState("مشکی");
+  const [colorPreview, setColorPreview] = useState("مشکی");
   const inCart = cart[product.id]?.qty || 0;
   return (
     <main className="container page-shell product-page">
@@ -809,20 +811,35 @@ function ProductPage({ id, wishlist, onWishlist, onAdd, cart }) {
           <div className="product-overview">
             <h2>در یک نگاه</h2>
             <p>{product.description}</p>
-            <dl className="spec-list"><div><dt>مناسب برای</dt><dd>{product.suitable}</dd></div><div><dt>حجم</dt><dd>{product.volume}</dd></div><div><dt>کشور سازنده</dt><dd>{product.origin}</dd></div><div><dt>کاربرد اصلی</dt><dd>{product.concerns.join("، ")}</dd></div></dl>
+            <dl className="spec-list"><div><dt>مناسب برای</dt><dd>{product.suitable}</dd></div><div><dt>حجم</dt><dd>{product.volume}</dd></div><div><dt>کاربرد اصلی</dt><dd>{product.concerns.join("، ")}</dd></div></dl>
           </div>
           <div className="variant-block">
             <fieldset className="variant-group">
               <legend>
-                <strong>رنگ</strong>
-                <button type="button" className="variant-legend-action" onClick={() => setSelectedColor("")}>پاک کردن</button>
+                <span className="variant-legend-meta"><strong>رنگ</strong><span>{colorPreview || selectedColor || "انتخاب نشده"}</span></span>
+                <button type="button" className="variant-legend-action" onClick={() => { setSelectedColor(""); setColorPreview(""); }}>پاک کردن</button>
               </legend>
               <div className="variant-options variant-options--color">
-                {[{ name: "مشکی", color: "#1f1f1f" }, { name: "طلایی", color: "#c9a34e" }].map((option) => (
-                  <label key={option.name} className={selectedColor === option.name ? "is-selected" : ""}>
-                    <input type="radio" name="product-color" value={option.name} checked={selectedColor === option.name} onChange={() => setSelectedColor(option.name)} />
+                {colorOptions.map((option) => (
+                  <label
+                    key={option.name}
+                    className={selectedColor === option.name ? "is-selected" : ""}
+                    onMouseEnter={() => setColorPreview(option.name)}
+                    onMouseLeave={() => setColorPreview(selectedColor)}
+                    onFocus={() => setColorPreview(option.name)}
+                    onBlur={() => setColorPreview(selectedColor)}
+                    onPointerDown={() => setColorPreview(option.name)}
+                  >
+                    <input
+                      type="radio"
+                      name="product-color"
+                      value={option.name}
+                      checked={selectedColor === option.name}
+                      onChange={() => { setSelectedColor(option.name); setColorPreview(option.name); }}
+                      aria-label={option.name}
+                    />
                     <span className="variant-swatch" style={{ background: option.color }} />
-                    <span>{option.name}</span>
+                    <span className="sr-only">{option.name}</span>
                   </label>
                 ))}
               </div>
